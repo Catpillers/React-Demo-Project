@@ -73,3 +73,9 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Deploying..."
+  logInfoOnFail:
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Output Information
+        run: echo "Information about failure...."
